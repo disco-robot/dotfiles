@@ -1,0 +1,252 @@
+include /etc/sway/config.d/*
+
+
+
+## keyboard/mouse configuration ##
+
+    input "1:1:AT_Translated_Set_2_keyboard" {
+        xkb_layout "pt"
+        xkb_variant ""
+    } 
+
+        
+    input * {
+        accel_profile flat
+        pointer_accel 0.05
+    }
+
+## Variables ##
+
+
+    #Programs:
+
+    set $term "foot"
+    set $file_manager "nautilus"
+    set $menu "ulauncher"
+    set $browser "brave"
+    set $text_editor "code"
+    set $ide_1 ""
+    set $ide_2 ""
+    set $mail_calendar ""
+    set $notes "export $(dbus-launch) ; flatpak run com.simplenote.Simplenote"
+    set $music ""
+    set $discord "export $(dbus-launch) ; flatpak run com.discordapp.Discord "
+    set $time_table ""
+
+    #Navigation:
+
+    set $left h
+    set $down j
+    set $up k
+    set $right l
+
+    #Other:
+
+    set $mod Mod4
+
+    #Options floating enable/disable, resize set x y, move position x y:
+    for_window [title="Picture-in-Picture"] floating enable, border pixel 2
+    for_window [title="Library"] floating enable 
+    for_window [class="xdman-Main"] floating enable
+    for_window [instance="Farge"] floating enable
+    for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, resize set width 730 height 450
+    for_window [title="Network Settings"] floating enable, resize set width 730 height 450
+    for_window [window_role="(pop-up|bubble|dialog)"] floating enable
+    for_window [title="^.*"] title_format ""
+
+    
+    gaps inner   10
+    gaps outer   10
+    gaps top     -5
+    #hide_edge_borders both
+    default_border pixel 6
+    default_floating_border pixel  5
+
+
+
+## Wallpaper ##
+
+    output * bg Tired_nord.png fill
+
+## Keybindings ##
+
+
+    # Navigation and manipulation of windows #
+
+        # Kill focused window
+        bindsym $mod+q kill
+
+        # Make the current focus fullscreen
+        bindsym $mod+f fullscreen
+
+        # Toggle the current focus between tiling and floating mode
+        bindsym $mod+space floating toggle
+
+        # Add focus to the previous windows
+        bindsym $mod+a focus parent
+
+        # Prompt exit
+        bindsym $mod+x exec bash $HOME/.config/sway/lgscript.sh
+
+        # Move your focus around
+        bindsym $mod+$left focus left
+        bindsym $mod+$down focus down
+        bindsym $mod+$up focus up
+        bindsym $mod+$right focus right
+
+        # Move focused window
+        bindsym $mod+Shift+$left move left
+        bindsym $mod+Shift+$down move down
+        bindsym $mod+Shift+$up move up
+        bindsym $mod+Shift+$right move right
+
+        # Change Workspaces
+        # mod + n -> workspace n
+        bindsym $mod+1 workspace number 1
+        bindsym $mod+2 workspace number 2
+        bindsym $mod+3 workspace number 3
+        bindsym $mod+4 workspace number 4
+        bindsym $mod+5 workspace number 5
+        bindsym $mod+6 workspace number 6
+        bindsym $mod+7 workspace number 7
+        bindsym $mod+8 workspace number 8
+        bindsym $mod+9 workspace number 9
+        bindsym $mod+0 workspace number 10
+
+        # Move focused window to a diferent workspace
+        # mod+Shift+n -> workspace n
+        bindsym $mod+Shift+1 move container to workspace number 1, workspace number 1
+        bindsym $mod+Shift+2 move container to workspace number 2, workspace number 2
+        bindsym $mod+Shift+3 move container to workspace number 3, workspace number 3
+        bindsym $mod+Shift+4 move container to workspace number 4, workspace number 4
+        bindsym $mod+Shift+5 move container to workspace number 5, workspace number 5
+        bindsym $mod+Shift+6 move container to workspace number 6, workspace number 6
+        bindsym $mod+Shift+7 move container to workspace number 7, workspace number 7
+        bindsym $mod+Shift+8 move container to workspace number 8, workspace number 8
+        bindsym $mod+Shift+9 move container to workspace number 9, workspace number 9
+        bindsym $mod+Shift+0 move container to workspace number 10, workspace number 10
+        
+        # Note: workspaces can have any name you want, not just numbers. #
+
+        
+        # Resizing windows:
+            # mode "resize" {
+            #     bindsym $left resize shrink width 10px
+            #     bindsym $down resize grow height 10px
+            #     bindsym $up resize shrink height 10px
+            #     bindsym $right resize grow width 10px
+
+            #     # Ditto, with arrow keys
+            #     bindsym Left resize shrink width 10px
+            #     bindsym Down resize grow height 10px
+            #     bindsym Up resize shrink height 10px
+            #     bindsym Right resize grow width 10px
+
+            #     # Return to default mode
+            #     bindsym Return mode "default"
+            #     bindsym Escape mode "default"
+            # }
+            # bindsym $mod+Shift+r mode "resize"
+
+        # Minimize windows
+
+        bindsym $mod+n move scratchpad
+        bindsym $mod+m scratchpad show
+
+
+        # Drag windows by holding down $mod and left mouse button.
+        # Resize them with right mouse button + $mod.
+        floating_modifier $mod normal
+
+    # Hotkeys #
+
+        bindsym $mod+Return exec $term
+        bindsym $mod+Shift+Return exec $file_manager
+        bindsym $mod+r exec $menu
+        bindsym $mod+w exec $browser
+        bindsym $mod+f1 exec $text_editor
+        bindsym $mod+f2 exec $ide_1
+        bindsym $mod+f3 exec $ide_2
+        bindsym $mod+f4 exec $notes
+        bindsym $mod+f5 exec $mail_calendar
+        bindsym $mod+f6 exec $music
+        bindsym $mod+f7 exec $discord
+        bindsym $mod+f8 exec $time_table
+        bindsym Print exec grim 
+
+    # Function keys #
+
+        # Volume
+            #Pulseaudio
+        #bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+        #bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+        #bindsym XF86AudioMute exec pamixer -D pulse set Master 1+ toggle
+
+            #Pipewire
+        bindsym XF86AudioRaiseVolume exec pamixer -i 5 #to increase 5%
+        bindsym XF86AudioLowerVolume exec pamixer -d 5 #to decrease 5%
+        bindsym XF86AudioMute exec pamixer -t
+
+        # Brightness
+
+        bindsym XF86MonBrightnessDown exec light -U 10
+        bindsym XF86MonBrightnessUp exec light -A 10
+
+        # Media controls
+        bindsym XF86AudioPlay exec playerctl play-pause
+        bindsym XF86AudioNext exec playerctl next 
+        bindsym XF86AudioPrev exec playerctl previous
+        bindsym XF86AudioStop exec playerctl stop
+
+        
+        
+        
+
+
+# Bar #
+
+    bar {
+        swaybar_command waybar
+    }
+  
+
+## Autostart ##
+    
+    exec pipewire
+    exec pipewire-pulse
+    exec pamixer
+    exec wireplumber
+    exec autotiling
+    exec eval `dbus-launch --auto-syntax`
+    exec wmname LG3D # Some programs require this, like android studio
+	
+
+    # -w 1 5 6 -> flag to only autotile in certain workspaces
+
+    # exec swaymsg "workspace 1; exec $browser;" -> browser will open in workspace 1
+
+    xwayland enable
+
+## Rules ##
+
+    # swaymsg 'assign [class="Media"] workspace 6' -> Any program associated with the class "Media" will open in workspace 6
+
+## Extras and other options ##
+
+    # Navigation #
+
+        # $mod+b or $mod+v, for horizontal and vertical, splits respectively.
+        # Kinda useless with autotilling
+
+        #bindsym $mod+b splith
+        #bindsym $mod+v splitv
+
+        # Switch the current container between different layout styles
+        # Using just autotiling and floating windows, so no use for this keybindings
+    
+        # bindsym $mod+s layout stacking
+        # bindsym $mod+w layout tabbed
+        # bindsym $mod+e layout toggle split
+
+    # To test this config you can reload sway with this keybind, althougth some elements change, some may require you to logout
+    bindsym $mod+Shift+c reload

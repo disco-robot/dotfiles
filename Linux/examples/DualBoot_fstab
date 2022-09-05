@@ -1,0 +1,15 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda4 LABEL=ROOT
+UUID=3ce51856-efb0-4563-bc40-2254f7773aae	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda5 LABEL=HOME
+UUID=413d37e6-d760-40c7-adba-a67c7dad3fb8	/home     	ext4      	rw,relatime	0 2
+
+# /dev/sda1
+UUID=C0FB-5DAD      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# windows
+/dev/sda3 /mnt/windows ntfs defaults 0 0
