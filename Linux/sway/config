@@ -23,7 +23,7 @@ include /etc/sway/config.d/*
     set $term "foot"
     set $file_manager "nautilus"
     set $menu "ulauncher"
-    set $browser "brave"
+    set $browser "librewolf"
     set $text_editor "code"
     set $ide_1 ""
     set $ide_2 ""

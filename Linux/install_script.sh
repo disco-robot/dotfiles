@@ -79,13 +79,13 @@ yay -S --noconfirm pipewire pipewire-jack pipewire-pulse wireplumber pipewire-al
 
 ## Sway install
 
-yay -S --noconfirm wayland xorg-xwayland wayland-protocols wlroots polkit sway swaybg foot wget
+yay -S --noconfirm wayland xorg-xwayland wayland-protocols wlroots polkit sway swaybg foot
 
 # Utils
 
 ## Regular packages
 
-sudo pacman -S --noconfirm  nautilus code dialog openssh openssh-openrc xdg-user-dirs flatpak jdk-openjdk sddm sddm-openrc brave-bin
+sudo pacman -S --noconfirm  nautilus code dialog openssh openssh-openrc xdg-user-dirs flatpak jdk-openjdk sddm sddm-openrc librewolf
 yay -S --noconfirm ulauncher autotiling waybar wmname waylogout-git connman-gtk udiskie light grim okular nomacs
 
 

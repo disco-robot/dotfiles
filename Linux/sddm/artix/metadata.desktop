@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=Archcraft
+Description=Sddm
+Version=1.0
+Theme-Id=Artix
+Theme-API=2.11
+Type=sddm-theme
+Screenshot=preview.png
+MainScript=main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
