@@ -66,7 +66,7 @@ include /etc/sway/config.d/*
 
 ## Wallpaper ##
 
-    output * bg Tired_nord.png fill
+    output * bg Wallpaper.png fill
 
 ## Keybindings ##
 
@@ -86,7 +86,7 @@ include /etc/sway/config.d/*
         bindsym $mod+a focus parent
 
         # Prompt exit
-        bindsym $mod+x exec bash $HOME/.config/sway/lgscript.sh
+        bindsym $mod+x exec bash $HOME/.config/sway/lg.sh
 
         # Move your focus around
         bindsym $mod+$left focus left
@@ -217,6 +217,7 @@ include /etc/sway/config.d/*
     exec pamixer
     exec wireplumber
     exec autotiling
+    exec udiskie
     exec eval `dbus-launch --auto-syntax`
     exec wmname LG3D # Some programs require this, like android studio
 	
