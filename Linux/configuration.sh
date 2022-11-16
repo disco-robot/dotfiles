@@ -77,7 +77,7 @@ case $WM in
     chmod +x setup.sh
     ./setup.sh
     cd ../
-    rm -R rofi
+    sudo rm -R rofi
     ;;
 
   1)
@@ -88,7 +88,7 @@ case $WM in
     chmod +x setup.sh
     ./setup.sh
     cd ../
-    rm -R rofi
+    sudo rm -R rofi
     ;;
 esac
 
@@ -136,7 +136,7 @@ case $WM in
   0)
     ln -s $Documents/git_clones/dotfiles/Linux/sway $HOME/.config/sway
     cp $Documents/git_clones/dotfiles/Wallpapers/Tired_nord.png $HOME/.config/sway/Wallpaper.png
-    ln -s $Documents/git_clones/dotfiles/Linux/waybar waybar
+    ln -s $Documents/git_clones/dotfiles/Linux/waybar $HOME/.config/waybar
     ;;
 
   1)

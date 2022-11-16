@@ -24,18 +24,18 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-    background-color: rgba(59, 66, 82,0.85);
+    background-color: rgba(20, 20, 20,0.85);
     margin: 0px 0px 0 0;
     padding-left: 10px;
 }
 .modules-center {
-    background-color: rgba(59, 66, 82,0.85);
+    background-color: rgba(20, 20, 20,0.85);
     margin: 0px 0 0 0;
 
 
 }
 .modules-left {
-    background-color: rgba(59, 66, 82,0.85);
+    background-color: rgba(20, 20, 20,0.85);
     margin: 0px 0 0 0px;
     padding-right: 20px;
 }
@@ -46,8 +46,8 @@ window#waybar {
     background-color: transparent;
 }
 #workspaces button:hover {
+    background-color: rgba(59, 66, 82,0.85);
     box-shadow: inherit;
-    background-color: rgba(96, 106, 126,1);
 }
 
 #workspaces button.focused {
