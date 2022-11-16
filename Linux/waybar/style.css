@@ -2,6 +2,7 @@
 for there isn't much to comment on */
 
 * {
+
     border: none;
     font-family: Font Awesome, Roboto, Arial, sans-serif;
     font-size: 15px;
@@ -9,7 +10,6 @@ for there isn't much to comment on */
     /*border-radius: 5px;*/
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-
 
 }
 

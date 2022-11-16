@@ -96,10 +96,10 @@ include /etc/sway/config.d/*
         bindsym $mod+$right focus right
 
         # Move focused window
-        bindsym $mod+Shift+$left move left
-        bindsym $mod+Shift+$down move down
-        bindsym $mod+Shift+$up move up
-        bindsym $mod+Shift+$right move right
+        bindsym $alt+$left move left
+        bindsym $alt+$down move down
+        bindsym $alt+$up move up
+        bindsym $alt+$right move right
 
         # Change Workspaces
         # mod + n -> workspace n
@@ -115,7 +115,7 @@ include /etc/sway/config.d/*
         bindsym $mod+0 workspace number 10
 
         # Move focused window to a diferent workspace
-        # mod+Shift+n -> workspace n
+        # alt+n -> workspace n
         bindsym $alt+1 move container to workspace number 1, workspace number 1
         bindsym $alt+2 move container to workspace number 2, workspace number 2
         bindsym $alt+3 move container to workspace number 3, workspace number 3

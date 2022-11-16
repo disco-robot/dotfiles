@@ -1,7 +1,7 @@
 {   // Modules Layout
     "modules-left": ["temperature","cpu","memory","custom/separator#1","sway/window"],
     "modules-center": ["sway/workspaces"],
-    "modules-right": ["tray","clock#1","clock#2","clock#3","custom/separator#2","network","battery","backlight","pulseaudio"],
+    "modules-right": ["tray","clock#1","clock#2","clock#3","custom/separator#2","network","battery","backlight"],
 
     //Sway
 
