@@ -1,0 +1,168 @@
+{   // Modules Layout
+    "modules-left": ["temperature","cpu","memory","custom/separator#1","sway/window"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["tray","clock#1","clock#2","clock#3","custom/separator#2","network","battery","backlight"],
+
+    //Sway
+
+        //Workspace module
+        "sway/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": true,
+            "format": "{icon}",
+            "format-icons": {
+                "urgent": "",
+                "focused": "",
+                "default": ""
+            },
+        },
+
+
+        //Current Window module
+        "sway/window": {
+            "format": "{}",
+            "max-length": 70
+        },
+
+    //Calendar
+
+        //Weekday
+        "clock#1": {
+            "format": "{:%a}",
+            "tooltip": false
+        },
+        //Time
+        "clock#2": {
+            // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+            // "format-alt": "{:%Y-%m-%d}"
+            
+        },
+
+        //Date
+        "clock#3": {
+            "format": "{:%d-%m-%y}",
+            "tooltip": false,
+        },
+
+    //Nerd Stats (Kinda buggy)
+
+        //RAM usage
+        "memory": {
+            "interval": 5,
+            "format": " {}%", // Icon: memory
+            "states": {
+                "warning": 70,
+                "critical": 90
+            }
+        },
+
+        //CPU usage
+        "cpu": {
+            "interval": 5,
+            "tooltip": false,
+            "format": " {usage}%", // Icon: microchip
+            "states": {
+            "warning": 70,
+            "critical": 90
+            }
+        },
+
+        //CPU Temps 
+        "temperature": {
+            "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+            "critical-threshold": 82,
+            "format-critical": "{temperatureC}°C {icon}",
+            "format": "{temperatureC}°C {icon}",
+            "format-icons": [""]
+        },
+
+
+    //System
+
+
+        //Brightness
+        "backlight": {
+            "device": "intel_backlight",
+            "format": "{percent}% {icon}",
+            "format-icons": ["",""]
+        },
+
+        //Battery
+        "battery": {
+            "states": {
+                // "good": 95,
+                "warning": 20,
+                "critical": 10
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% ",
+            "format-plugged": "{capacity}% ",
+            "format-alt": "{time} {icon}",
+            "format-full": "",
+            "format-icons": ["", "", "", "", ""]
+        },
+        
+        //Volume
+        "pulseaudio": {
+            // "scroll-step": 1, // %, can be a float
+            "format": "{volume}% 墳",
+        },
+
+        //Tray (Kinda of buggy)
+        "tray": {
+            "icon-size": 15,
+            "spacing": 10
+        },
+
+        "network": {
+            "interval": 300,
+        "format-wifi": "直 {essid}",
+            "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+            "format-linked": "{ifname} (No IP) ",
+            "format-disconnected": "睊",
+            "on-click": "connman-gtk"
+    },
+    
+
+        
+
+    //Custom stuff
+
+        //Power button   
+        "custom/power": {
+            "format": "",
+            "on-click": "bash $HOME/.config/sway/lgscript.sh"
+            
+        },
+
+        //Minimazed windows indicator
+        "custom/scratchpad-indicator": {
+            "format-text": "{}",
+            "return-type": "json",
+            "interval": 3,
+            "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",
+            "exec-if": "exit 0",
+            "on-click": "swaymsg 'scratchpad show'",
+            "on-click-right": "swaymsg 'move scratchpad'"
+        },
+
+        //Separators
+
+        "custom/separator#1": {
+            "format": "|   ",
+            "interval": "once",
+            "tooltip": false
+        },
+
+        "custom/separator#2": {
+            "format": " |",
+            "interval": "once",
+            "tooltip": false
+        },
+
+
+
+   
+    
+
+}

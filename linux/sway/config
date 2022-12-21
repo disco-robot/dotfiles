@@ -207,7 +207,7 @@ include /etc/sway/config.d/*
 # Bar #
 
     bar {
-        swaybar_command waybar
+        swaybar_command waybar -c $HOME/.config/waybar/sway -s $HOME/.config/waybar/sway.css
     }
   
 

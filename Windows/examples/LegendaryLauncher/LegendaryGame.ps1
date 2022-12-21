@@ -1,1 +1,0 @@
-legendary launch game_placeholder
