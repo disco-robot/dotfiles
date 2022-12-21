@@ -1,42 +1,27 @@
 {   // Modules Layout
-    "modules-left": ["temperature","cpu","memory","custom/separator#1","sway/window"],
-    "modules-center": ["sway/workspaces"],
-    "modules-right": ["tray","clock#1","clock#2","clock#3","custom/separator#2","network","battery","backlight"],
+    "modules-left": ["tray","temperature","cpu","memory","pulseaudio","custom/separator#1","hyprland/window"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["clock#1","clock#2","clock#3","custom/separator#2","network","battery","backlight"],
 
-    //Sway
+    //Hyprland
 
         //Idk
-        "sway/mode": {
-            "format": "<span style=\"italic\">{}</span>"
-        },
 
         //Workspace module
-        "sway/workspaces": {
+        "wlr/workspaces": {
             "disable-scroll": true,
             "all-outputs": true,
             "format": "{icon}",
             "format-icons": {
-                "1": "    ",
-                "2": "    ",
-                "3": "    ",
-                "4": "    ",
-                "5": "    ",
                 "urgent": "",
-                "focused": "",
+                "active": "",
                 "default": ""
             },
-            "persistent_workspaces": {
-                "1": [],
-                "2": [],
-                "3": [], 
-                "4": [], 
-                "5": [], 
-            }
         },
 
 
         //Current Window module
-        "sway/window": {
+        "hyprland/window": {
             "format": "{}",
             "max-length": 70
         },
@@ -57,7 +42,7 @@
 
         //Date
         "clock#3": {
-            "format": "{:%m-%d-%y}",
+            "format": "{:%d-%m-%y}",
             "tooltip": false,
         },
 
