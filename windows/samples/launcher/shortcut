@@ -1,0 +1,7 @@
+target:
+
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File $PATH/program.ps1
+
+start in:
+
+C:\Windows\System32\WindowsPowerShell\v1.0
